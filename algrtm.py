@@ -1,7 +1,7 @@
 class Search():
     '''линейный поиск - самый простой поиск.
     Для работы алгоритма поиска не требуется подготовка элементов'''
-    def linear(arr, element):
+    def linear(self, arr, element):
         for i in range (len(arr)):
             if arr[i] == element:
                 return i
@@ -16,7 +16,7 @@ class Search():
             1) Если искомое больше, то поиск продолжается справа от центрального элемента массива.
             2) Если искомое меньше, то поиск продолжается слева.
     '''
-    def bin_search(arr, element):
+    def bin_search(self, arr, element):
         left = 0
         right = len(arr)-1
         index = -1
@@ -45,7 +45,7 @@ class Search():
     После этого необходимо вернуться на шаг назад и применить линейный поиск.
     
     '''
-    def jump (arr, element):
+    def jump (self, arr, element):
         length = len(arr)
         jump = int (math.sqrt(length))
         left, right = 0, 0
@@ -77,7 +77,7 @@ class Search():
     
     '''
 
-    def interpolation(arr, element):
+    def interpolation(self, arr, element):
         left = 0
         right = len(arr) - 1
         while left <= right and element >= arr[left] and element <= arr[right]:
@@ -90,7 +90,7 @@ class Search():
                 right = index -1
         return -1
 
-    def exponent_search(arr, element):
+    def exponent_search(self, arr, element):
         if arr[0] == element:
             return 0
         index = 1
@@ -100,7 +100,7 @@ class Search():
 
 class Sorting():
 
-    def bubble_sort(arr):
+    def bubble_sort(self, arr):
         n = len(arr)
 
         for i in range(n-1):
@@ -110,7 +110,8 @@ class Sorting():
                     arr[j] = arr[j+1]
                     arr[j+1] = b
         return arr
-    def selectrion_sort(arr):
+
+    def selectrion_sort(self, arr):
         for i in range (len(arr)):
             min_index = i
             for j in range (i+1, len(arr)):
@@ -118,7 +119,9 @@ class Sorting():
                     min_index = j
             arr[i], arr[min_index] = arr[min_index], arr[i]
         return arr
-    def insertion_search(arr):
+
+
+    def insertion_search(self, arr):
         for i in range(1, len(arr)):
             element_to_insert = arr[i]
             j = i - 1
@@ -127,9 +130,10 @@ class Sorting():
                 j -=1
             arr[j+1] = element_to_insert
         return arr
+
     #где то тут должна быть сортировка слиянием
 
-    def gnome(arr):
+    def gnome(self, arr):
         i, size = 1, len(arr)
         while i < size:
             if arr[i -1] <= arr[i]:
@@ -143,7 +147,7 @@ class Sorting():
     
         
 #вычислить факториал числа
-def fibonacci(n):
+def fibonacci(self, n):
     if n == 1 or n == 2:
         return 1
     return fibonacci(n-1) + fibonacci(n-2)
